@@ -1,2 +1,2 @@
 # livan-hompage
-my personal homepage
+my personal homepaged
