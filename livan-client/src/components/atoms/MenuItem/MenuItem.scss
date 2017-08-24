@@ -1,0 +1,16 @@
+@import 'utils';
+
+.menu-item{
+    display: flex;
+    color: material-color('grey', '200');
+    cursor: pointer;
+    align-items: center;
+    font-weight: 400;
+    transition: all .1s;
+
+    &:hover{
+        transform: scale(1.1, 1.1);
+        font-weight: 700;
+        color: material-color('grey', '50');
+    }
+}

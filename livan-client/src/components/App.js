@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Header } from '../components';
+import { HomePage } from '../components';
 import '../styles/main.scss';
 import { Route } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Route exact path="/" component={Header}/>
+                <Route exact path="/" component={HomePage}/>
             </div>
         )
     }

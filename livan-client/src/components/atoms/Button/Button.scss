@@ -1,2 +1,18 @@
 @import 'utils';
 
+.button {
+    font-size: 1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline;
+    transition: all .3s;
+
+    &:hover{
+        color : white;
+        transform: scale(1.2, 1.2);
+    }
+}
