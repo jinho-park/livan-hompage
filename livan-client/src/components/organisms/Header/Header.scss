@@ -12,9 +12,13 @@
         @include responsive();
         align-items: center;
 
-        .rigth-side{
+        .right-side{
             display: flex;
             margin-left: auto;
         }
+    }
+
+    .login-button{
+        margin-left: 2rem;
     }
 }

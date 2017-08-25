@@ -1,18 +1,30 @@
 @import 'utils';
 
 .button {
+    display: inline-block;
     font-size: 1rem;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
-    display: inline;
-    transition: all .3s;
+    user-select: none;
 
+    color: material-color('grey', '200');
     &:hover{
         color : white;
-        transform: scale(1.2, 1.2);
+    }
+
+    &.invert{
+        border : 2px solid material-color('grey', '200');
+        color : material-color('grey', '200');
+        transition: all 200ms;
+        border-radius: 10%;
+
+        &:hover{
+            background: material-color('grey', '200');
+            color: black;
+        }
     }
 }

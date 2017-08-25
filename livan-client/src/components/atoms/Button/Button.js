@@ -4,9 +4,13 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(style);
 
-const Button = ({children}) => {
+const Button = ({
+    children,
+    invert,
+    className
+}) => {
     return(
-        <div className={cx('button')}>
+        <div className={cx('button', {invert}, className)}>
             {children}
         </div>
     );

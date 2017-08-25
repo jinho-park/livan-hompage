@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const Menu = () => {
     return(
-        <div className={cx('')}>
+        <div className={cx('menu-box')}>
             <MenuItem>About</MenuItem>
             <MenuItem>Dev</MenuItem>
             <MenuItem>Talk</MenuItem>

@@ -7,7 +7,7 @@ const cx = classNames.bind(style);
 const Logo = () => {
     return(
         <div className={cx('logo')}>
-            Livan
+            <h3>Livan</h3>
         </div>
     );
 }

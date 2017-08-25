@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.scss';
 import classNames from 'classnames/bind';
-import { Logo, Menu} from 'components';
+import { Logo, Menu, Button } from 'components';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +14,7 @@ const Header = () => {
                 </div>
                 <div className={cx('right-side')}>
                     <Menu/>
+                    <Button invert className={cx('login-button')}>Login</Button>
                 </div>
             </div>
         </div>

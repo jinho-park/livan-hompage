@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <Pagetemplate header={<Header/>}>
             <PolyBackground>
-                dd
+                <h1>Welcome Livan's Homepage</h1>
             </PolyBackground>
         </Pagetemplate>
     )
