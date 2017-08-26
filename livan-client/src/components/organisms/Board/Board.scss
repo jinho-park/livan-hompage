@@ -1,0 +1,12 @@
+@import 'utils';
+
+.board{
+    background: white;
+    z-index: 10;
+    @include responsive();
+    height: 70%;
+    margin-top : 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    @include material-shadow(5);
+}

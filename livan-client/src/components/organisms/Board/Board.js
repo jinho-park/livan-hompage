@@ -1,15 +1,16 @@
 import React from 'react';
-import styles from './MenuItem.scss';
 import classNames from 'classnames/bind';
+import styles from './Board.scss';
 
 const cx = classNames.bind(styles);
 
-const MenuItem = ({children}, onClick) => {
+const Board = ({children}) => {
     return (
-        <div className={cx('menu-item')} onClick={onClick}>
+        <div className={cx('board')}>
+            aa
             {children}
         </div>
     )
 }
 
-export default MenuItem;
+export default Board;

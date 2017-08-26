@@ -11,7 +11,7 @@ const Pagetemplate = ({header, children, responsive, padding}) => {
                 {header}
             </header>
             <main className={cx('content', {
-                responsive
+                responsive, padding
             })}>
                 {children}
             </main>
