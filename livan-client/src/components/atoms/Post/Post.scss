@@ -1,0 +1,8 @@
+@import 'utils';
+
+.post{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include material-shadow(1);
+}

@@ -8,10 +8,10 @@ const cx = classNames.bind(styles);
 const Menu = () => {
     return(
         <div className={cx('menu-box')}>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Dev</MenuItem>
-            <MenuItem>Talk</MenuItem>
-            <MenuItem>Ect</MenuItem>
+            <MenuItem url={"/about"}>About</MenuItem>
+            <MenuItem url={"/dev"}>Dev</MenuItem>
+            <MenuItem url={"/talk"}>Talk</MenuItem>
+            <MenuItem url={"/ect"}>Ect</MenuItem>
         </div>
     );
 }

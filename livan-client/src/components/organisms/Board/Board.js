@@ -1,14 +1,17 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Board.scss';
+import { Head } from 'components';
 
 const cx = classNames.bind(styles);
 
-const Board = ({children}) => {
+const Board = ({children, title}) => {
     return (
         <div className={cx('board')}>
-            aa
-            {children}
+            <Head title={title}></Head>
+            <div className={cx('content')}>
+                {children}
+            </div>
         </div>
     )
 }

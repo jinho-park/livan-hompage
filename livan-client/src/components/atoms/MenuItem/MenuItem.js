@@ -4,11 +4,11 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const MenuItem = ({children}, onClick) => {
+const MenuItem = ({children, url}) => {
     return (
-        <div className={cx('menu-item')} onClick={onClick}>
+        <a className={cx('menu-item')} href={url}>
             {children}
-        </div>
+        </a>
     )
 }
 
