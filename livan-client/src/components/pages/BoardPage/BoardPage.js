@@ -8,6 +8,7 @@ const BoardPage = () =>{
         <Pagetemplate header={<Header/>}>
             <PolyBackground>
                 <Board title={arr[3]}>
+                    
                 </Board>
             </PolyBackground>
         </Pagetemplate>

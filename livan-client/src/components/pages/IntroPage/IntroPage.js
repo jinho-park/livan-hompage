@@ -6,7 +6,7 @@ const IntroPage = () => {
         <Pagetemplate header={<Header/>}>
             <PolyBackground>
                 <Board title="About">
-                    
+                    <Post>aa</Post>
                 </Board>
             </PolyBackground>
         </Pagetemplate>
