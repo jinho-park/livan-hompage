@@ -1,7 +1,7 @@
 @import 'utils';
 
 .post{
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
+    padding : 1rem;
     @include material-shadow(1);
 }
