@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
+const api = require('./api');
 const app = new Koa();
 
 const {
@@ -10,9 +12,17 @@ const {
 
 const router = new Router();
 
-app.use(router.route());
+app.use(bodyParser());
+
+/*app.use(async function(ctx){
+    ctx.body = 'hhello';
+});*/
+
+router.use('/api', api.routes());
+
+app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(port, () =>{
-    console.log('server listening ${port} port');
+    console.log(`server listening port : ${port}`);
 });

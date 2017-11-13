@@ -1,7 +1,8 @@
 const Router = require('koa-router');
-const v1 = require('./v1.0');
+const user = require('./user');
+
 const api = new Router();
 
-app.use('/v1.0', v1.routes());
+api.use('/user', user.routes());
 
 module.exports = api;
