@@ -1,4 +1,3 @@
-const User  = require('db');
 const validator = require('validator');
 
 exports.getUserInfo = async (ctx) => {

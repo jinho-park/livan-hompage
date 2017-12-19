@@ -15,26 +15,4 @@ var pool = mysql.createPool({
     connectionLimit : 10
 });
 
-exports.getUser = function(name){
-    var sql = "select * from user";
-
-    pool.getConnection(function(name, connection){
-        if(err){
-            console.log(err);
-            callback(true);
-            return;
-        }
-
-        connection.query(sql, [name], function(err, results){
-            connection.realease();
-            if(err){
-                console.log(err);
-                callback(true);
-                return;
-            }
-
-            console.log(result);
-            callback(false, results);
-        })
-    })
-};
+exports.pool = pool;
