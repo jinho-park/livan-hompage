@@ -40,12 +40,25 @@
       margin-top: 0;
     }
     .login {
+      background: material-color('blue', '500');
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
     .login-foot {
       font-size: 0.85rem;
       display: flex;
+
+      .password{
+        background : material-color('blue', '500');
+        width: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .register{
+        background : material-color('blue', '500');
+        width: 50%;
+        margin-left: 0.5rem;
+      }
     }
     .separator { 
       display: block;

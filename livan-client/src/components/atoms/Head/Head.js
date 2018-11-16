@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 const Head = ({children, title}) => {
     return (
         <div className={cx('head')}>
-            <h1>{title}</h1>
+            {title}
         </div>
     )
 }

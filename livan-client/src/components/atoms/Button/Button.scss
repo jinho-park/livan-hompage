@@ -27,4 +27,43 @@
             color: black;
         }
     }
+
+    &.flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+
+    &.flex + &.flex {
+        margin-left: 1rem;
+    }
+
+    &.flat {
+        border-radius: 2px;
+        transition: all .15s ease-in;
+        &:hover {
+            @include material-shadow(2);
+        }
+        &.white {
+            background: white;
+            border: 1px solid material-color('grey', '100');
+
+            &:hover {
+                background : material-color('grey', '100');
+            }
+        }
+    }
+
+    &.outline {
+        background : transparent;
+        border: 1px solid material-color('grey', '300');
+        &:hover {
+        border: 1px solid transparent;
+        background: material-color('grey', '100');
+        }
+        &:active {
+        background: material-color('grey', '200');
+        }
+    }
 }

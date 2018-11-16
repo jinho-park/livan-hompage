@@ -3,18 +3,14 @@
 .head{
     margin: 1rem;
     border-radius: 4px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding : 0.5rem 1rem;
     width: 100%;
     height: 4rem;
     align-items: center;
     display: flex;
-    text-decoration: underline;
-    h1{
-        font-size: 200%;
-        text-align: center;
-        font-weight: 700;
-        margin-left : auto;
-        margin-right: auto;
-    }
+    border-bottom: 1px grey;
+    font-size: 200%;
+    font-weight: 700;
+    margin-left : auto;
+    margin-right: auto;
 }

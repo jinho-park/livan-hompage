@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as baseActions from 'store/modules/base';
+import * as authActions from 'store/modules/auth';
 import { Header } from 'components';
 import { throttle } from 'lodash';
 
@@ -21,8 +22,11 @@ class HeaderContainer extends Component{
     }, 500);
 
     handleLoginButton = () => {
-        const { BaseActions } = this.props;
+        const { BaseActions, AuthActions } = this.props;
+        console.log('click');
         BaseActions.setScreenMaskVisibility(true);
+        AuthActions.toggleLoginModal();
+        AuthActions.setModalMode('login');
     }
 
     handleLogoutButton = () => {
@@ -48,5 +52,6 @@ export default connect(
     }),
     (dispatch) => ({
         BaseActions: bindActionCreators(baseActions, dispatch),
+        AuthActions: bindActionCreators(authActions, dispatch)
     })
 )(HeaderContainer);

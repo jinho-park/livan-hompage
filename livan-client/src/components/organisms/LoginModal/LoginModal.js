@@ -17,9 +17,6 @@ const LoginModal = ({
   onClose,
   onKeyPress
 }) => {
-  const isLogin = mode === 'login';
-  const modeText = isLogin ? '로그인' : '회원가입';
-  const invertedText = isLogin ? '회원가입' : '로그인';
   
   const {
     email,
@@ -32,15 +29,12 @@ const LoginModal = ({
     localLogin: localLoginError
   } = error ? error.toJS() : { };
 
-  const onButtonClick = isLogin ? onLogin : onRegister;
-
   return (
     <Modal visible={visible} mobileFullscreen>
       <div className={cx('login-modal')}>
-        <div className={cx('bar')}></div>
         <div className={cx('close')} onClick={onClose}>✕</div>
         <div className={cx('content')}>
-          <h3>이메일로 {modeText}</h3>
+          <h3>이메일로 로그인</h3>
           <InputError error={localLoginError} noMarginTop/>
           <div className={cx('form')}>
             <Input 
@@ -62,17 +56,22 @@ const LoginModal = ({
           </div>
           <Button 
             flat color="teal" 
-            flex padding="0.6rem" 
+            flex padding="0.6rem"
             className={cx('login')}
-            onClick={onButtonClick}>{modeText}</Button>
+            onClick={onLogin}>로그인
+          </Button>
           <div className={cx('login-foot')}>
-            <Button>비밀번호 찾기</Button>
-            <Button right onClick={onChangeMode}>{invertedText}</Button>
+            <div className={cx('password')}>
+              <Button flex flat>비밀번호 찾기</Button>
+            </div>
+            <div className={cx('register')}>
+              <Button flex flat>회원가입</Button>
+            </div>
           </div>
           <div className={cx('separator')}>
             <div className={cx('or')}>OR</div>
           </div>
-          <h3>소셜 계정으로 {modeText}</h3>
+          <h3>소셜 계정으로 로그인</h3>
           <SocialLoginButton onSocialLogin={onSocialLogin}/>
         </div>
       </div>

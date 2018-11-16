@@ -11,10 +11,10 @@
     width: 100%;
   }
   &:focus {
-    border: 1px solid material-color('teal', '600');
-    color: material-color('teal', '500');
+    border: 1px solid material-color('light-blue', '600');
+    color: material-color('light-blue', '500');
     &::placeholder {
-       color: material-color('teal', '400');
+       color: material-color('light-blue', '400');
     }
   }
 }

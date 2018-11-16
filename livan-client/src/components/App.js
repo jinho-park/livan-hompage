@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { HomePage, BoardPage, IntroPage } from 'components';
-import { ScreenMaskContainer } from 'containers';
+import { ScreenMaskContainer, LoginModalContainer } from 'containers';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
                 <Route path="/talk" component={BoardPage}/>
                 <Route path="/ect" component={BoardPage}/>
                 <ScreenMaskContainer/>
+                <LoginModalContainer/>
             </div>
         )
     }

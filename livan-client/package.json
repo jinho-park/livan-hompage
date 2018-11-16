@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.1",
+    "axios": "^0.18.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -43,6 +44,7 @@
     "react-dom": "next",
     "react-error-overlay": "^1.0.9",
     "react-icons": "^3.2.2",
+    "react-onclickoutside": "^6.7.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "redux": "^4.0.1",
