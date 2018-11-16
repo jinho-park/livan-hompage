@@ -1,10 +1,10 @@
 import React from 'react';
-import { Pagetemplate, PolyBackground, Header } from 'components';
+import { Pagetemplate } from 'components';
+import { HeaderContainer } from 'containers';
 
 const ResisterPage = () => {
     return (
-        <Pagetemplate header={<Header/>}>
-            <PolyBackground/>
+        <Pagetemplate header={<HeaderContainer/>}>
         </Pagetemplate>
     )
 }

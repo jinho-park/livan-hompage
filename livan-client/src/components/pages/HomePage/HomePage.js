@@ -1,12 +1,10 @@
 import React from 'react';
-import {Pagetemplate, Header, PolyBackground} from 'components';
+import {Pagetemplate } from 'components';
+import { HeaderContainer, ScreenMaskContainer } from 'containers';
 
 const HomePage = () => {
     return (
-        <Pagetemplate header={<Header/>}>
-            <PolyBackground>
-                <h1>Welcome Livan's Homepage</h1>
-            </PolyBackground>
+        <Pagetemplate header={<HeaderContainer/>}>
         </Pagetemplate>
     )
 }

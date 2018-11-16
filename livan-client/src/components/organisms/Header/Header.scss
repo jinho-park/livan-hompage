@@ -2,7 +2,13 @@
 
 .header{
     height: 3.5rem;
-    //background: material-color('blue', '400');
+    background: material-color('blue', '400');
+    @include material-shadow();
+
+    &.shadow {
+        background: linear-gradient(to right, #276caf, #30a1c1);
+        @include material-shadow(2, 0.75);
+    }
 
     .wrapper-item{
         padding-left: 1rem;

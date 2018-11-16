@@ -7,10 +7,11 @@ const cx = classNames.bind(style);
 const Button = ({
     children,
     invert,
-    className
+    className,
+    onClick
 }) => {
     return(
-        <div className={cx('button', {invert}, className)}>
+        <div className={cx('button', {invert}, className)} onClick={onClick}>
             {children}
         </div>
     );
