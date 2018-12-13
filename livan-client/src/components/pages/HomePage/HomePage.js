@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pagetemplate } from 'components';
-import { HeaderContainer, ScreenMaskContainer } from 'containers';
+import { HeaderContainer } from 'containers';
 
 const HomePage = () => {
     return (

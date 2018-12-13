@@ -65,7 +65,7 @@ const LoginModal = ({
               <Button flex flat>비밀번호 찾기</Button>
             </div>
             <div className={cx('register')}>
-              <Button flex flat>회원가입</Button>
+              <Button flex flat onClick={onRegister}>회원가입</Button>
             </div>
           </div>
           <div className={cx('separator')}>

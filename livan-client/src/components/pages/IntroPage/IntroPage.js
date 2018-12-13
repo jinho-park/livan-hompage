@@ -14,8 +14,9 @@ const IntroPage = () => {
                 </Post>
                 <Post item="Project"></Post>
                 <Post item="Education">
-                    광운대학교 - KwangwoonUniversity(2012 ~ 현재)
-                    전자통신공학과
+                    학사 : 광운대학교 - KwangwoonUniversity(2012 ~ 2017) 전자통신공학과
+                    <br/>
+                    석사 : 광운대학교 - KwangwoonUniversity(2018 ~ 현재) 컴퓨터통신 연구실
                 </Post>
             </Board>
         </Pagetemplate>

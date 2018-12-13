@@ -4,4 +4,8 @@
     margin: 1rem;
     padding : 1rem;
     @include material-shadow(1);
+
+    .value{
+        padding-left : 1rem;
+    }
 }

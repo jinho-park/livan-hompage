@@ -1,0 +1,27 @@
+create table user(
+userId int NOT NULL auto_increment primary key,
+nickName varchar(15) NOT NULL,
+Email varchar(30) NOT NULL,
+password varchar(15) NOT NULL,
+socialId varchar(10));
+
+create table postClass(
+classId int NOT NULL auto_increment primary key,
+className varchar(10));
+
+create table post(
+classId int NOT NULL,
+postId int NOT NULL auto_increment primary key,
+userId int NOT NULL,
+postNmae varchar(30) NOT NULL,
+postContent TEXT NOT NULL,
+foreign key(classId) references postClass(classId) on update cascade,
+foreign key(userId) references user(userId) on update cascade);
+
+create table comment(
+classId int NOT NULL,
+userId int NOT NULL,
+commetId int NOT NULL auto_increment primary key,
+commentContent TEXT,
+foreign key(classId) references postClass(classId) on update cascade,
+foreign key(userId) references user(userId) on update cascade);

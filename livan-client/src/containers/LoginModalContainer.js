@@ -23,11 +23,20 @@ class LoginModalContainer extends Component {
     }
 
     handleLogin = () => {
+        const { AuthActions } = this.props;
 
+        AuthActions.localLogin();
     }
 
     handleRegister = () => {
+        const { AuthActions, BaseActions, visible, history } = this.props;
+        if(!visible) return;
 
+        AuthActions.toggleLoginModal();
+        BaseActions.setScreenMaskVisibility(false);
+
+        console.log(history);
+        history.push('/resister');
     }
 
     handleClickOutside = evt => {
@@ -38,8 +47,8 @@ class LoginModalContainer extends Component {
         const { AuthActions, BaseActions, visible } = this.props;
         if(!visible) return;
 
-        BaseActions.setScreenMaskVisibility(false);
         AuthActions.toggleLoginModal();
+        BaseActions.setScreenMaskVisibility(false);
     }
 
     handleKeyPress = (e) => {
@@ -78,7 +87,7 @@ class LoginModalContainer extends Component {
                     onSocialLogin={handleSocialLogin}
                     onClose={handleClose}
                     onKeyPress={handleKeyPress}
-                    />
+                />
             </div>
         )
     }

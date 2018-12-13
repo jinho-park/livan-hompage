@@ -9,7 +9,9 @@ const Post = ({children, item}) =>{
     return(
         <div className={cx('post')}>
             <Title>{item}</Title>
-            {children}
+            <div className={cx('value')}>
+                {children}
+            </div>
         </div>
     )
 }

@@ -23,7 +23,8 @@ const initialState = Map({
         email: '',
         password: ''
     }),
-    error : null
+    error : null,
+    loginResult : false
 });
 
 export default handleActions({
@@ -45,5 +46,17 @@ export default handleActions({
     },
     [SET_ERROR]: (state, action) => {
         return state.set('error', fromJS(action.payload));
-    }
+    },
+    ...pender({
+        type : LOCAL_LOGIN,
+        onSuccess : (state, action) => {
+            const { data : loginResult } = action.payload;
+            return state.set('loginResult', loginResult);
+        },
+        onFailure: (state, action) => {
+            return state.set('error', fromJS({
+                localLogin: ['잘못된 계정 정보입니다']
+            }));
+        }
+    })
 }, initialState)
