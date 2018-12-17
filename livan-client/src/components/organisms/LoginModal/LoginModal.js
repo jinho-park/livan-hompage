@@ -6,11 +6,9 @@ const cx = classNames.bind(styles);
 
 const LoginModal = ({
   visible, 
-  mode, 
   forms,
   error,
   onChangeInput,
-  onChangeMode,
   onLogin,
   onRegister,
   onSocialLogin,

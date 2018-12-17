@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { LoginModal } from 'components';
+import { Register } from 'components';
 import * as baseActions from 'store/modules/base';
 import * as authActions from 'store/modules/auth';
 import onClickOutside from 'react-onclickoutside';
@@ -13,20 +13,18 @@ class LoginModalContainer extends Component {
         const { AuthActions } = this.props;
         const { name, value } = e.target;
 
-        AuthActions.changeInput({ name, value });
+        AuthActions.registChangeInput({name, value});
     }
 
     handleLogin = () => {
-        const { AuthActions } = this.props;
-
-        AuthActions.localLogin();
+        const { BaseActions, AuthActions } = this.props;
+        BaseActions.setScreenMaskVisibility(true);
+        AuthActions.toggleLoginModal();
+        AuthActions.setModalMode('login');
     }
 
     handleRegister = () => {
-        const { AuthActions, visible } = this.props;
-        if(!visible) return;
 
-        AuthActions.toggleRegisterModal();
     }
 
     handleClickOutside = evt => {
@@ -37,39 +35,35 @@ class LoginModalContainer extends Component {
         const { AuthActions, BaseActions, visible } = this.props;
         if(!visible) return;
 
-        AuthActions.toggleLoginModal();
+        AuthActions.toggleRegisterModal();
         BaseActions.setScreenMaskVisibility(false);
     }
 
     handleKeyPress = (e) => {
         if(e.key !== 'Enter') return;
-    }
 
-    handleSocialLogin = () => {
-
+        const { mode } = this.props;
     }
 
     render(){
         const { visible, form, error } = this.props;
         const { 
             handleChangeInput,
-            handleLogin,
             handleRegister,
-            handleSocialLogin,
             handleClose,
-            handleKeyPress
+            handleKeyPress,
+            handleLogin
         } = this;
 
         return(
             <div>
-                <LoginModal
+                <Register
                     visible={visible} 
                     forms={form} 
                     error={error}
-                    onChangeInput={handleChangeInput}
                     onLogin={handleLogin}
+                    onChangeInput={handleChangeInput}
                     onRegister={handleRegister}
-                    onSocialLogin={handleSocialLogin}
                     onClose={handleClose}
                     onKeyPress={handleKeyPress}
                 />
@@ -80,9 +74,9 @@ class LoginModalContainer extends Component {
 
 export default connect(
     (state) => ({
-        visible: state.auth.getIn(['modal', 'loginVisible']),
+        visible: state.auth.getIn(['modal', 'registerVisible']),
         mode: state.auth.getIn(['modal', 'mode']),
-        form: state.auth.get('form'),
+        form: state.auth.get('regist'),
         error: state.auth.get('error')
     }),
     (dispatch) => ({

@@ -7,12 +7,11 @@ const {
     DATABASE : Database,
 } = process.env;
 
-var pool = mysql.createPool({
+const connection = mysql.createConnection({
     host : db_url,
     user : User,
     password : Password,
-    database : Database,
-    connectionLimit : 10
+    database : Database
 });
 
-exports.pool = pool;
+exports.connection = connection;

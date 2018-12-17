@@ -23,7 +23,6 @@ class HeaderContainer extends Component{
 
     handleLoginButton = () => {
         const { BaseActions, AuthActions } = this.props;
-        console.log('click');
         BaseActions.setScreenMaskVisibility(true);
         AuthActions.toggleLoginModal();
         AuthActions.setModalMode('login');
@@ -35,12 +34,14 @@ class HeaderContainer extends Component{
 
     render() {
         const { handleLoginButton, handleLogoutButton } = this;
-        const { shadow } = this.state;
+        const { shadow, login } = this.state;
 
         return (
             <Header
                 onLoginHandle={handleLoginButton}
                 shadow={shadow}
+                login={login}
+                onLogoutHandle={handleLogoutButton}
             />
         );
     }
@@ -48,7 +49,8 @@ class HeaderContainer extends Component{
 
 export default connect(
     (state) => ({
-        userMenu: state.base.getIn(['header', 'userMenu'])
+        userMenu: state.base.getIn(['header', 'userMenu']),
+        login : state.auth.getIn('loginResult')
     }),
     (dispatch) => ({
         BaseActions: bindActionCreators(baseActions, dispatch),

@@ -5,7 +5,7 @@ import { Logo, Menu, Button } from 'components';
 
 const cx = classNames.bind(styles);
 
-const Header = ({onLoginHandle, shadow}) => {
+const Header = ({onLoginHandle, shadow, login, onLogoutHandle}) => {
     return (
         <div className={cx('header', { shadow })}>
             <div className={cx('wrapper-item')}>
@@ -14,13 +14,23 @@ const Header = ({onLoginHandle, shadow}) => {
                 </div>
                 <div className={cx('right-side')}>
                     <Menu/>
-                    <Button 
-                        invert 
-                        className={cx('login-button')}
-                        onClick={onLoginHandle}
-                    >
-                        Login
-                    </Button>
+                    {login ? 
+                        <Button 
+                            invert 
+                            className={cx('login-button')}
+                            onClick={onLogoutHandle}
+                        >
+                            Logout
+                        </Button>
+                        :
+                        <Button 
+                            invert 
+                            className={cx('login-button')}
+                            onClick={onLoginHandle}
+                        >
+                            Login
+                        </Button>
+                    }
                 </div>
             </div>
         </div>
